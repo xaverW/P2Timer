@@ -35,7 +35,7 @@ import javafx.stage.Stage;
 public class MTStartErrorWindow extends Application {
     // toDo für weitere Startfehlermeldungen vorbereiten -> nach P2Tools
 
-    private final String url = "https://www.p2tools.de/p2podder/manual/start.html";
+    private final String url = "https://www.p2tools.de/";
     private Stage primaryStage;
 
     public static void main(String[] args) {

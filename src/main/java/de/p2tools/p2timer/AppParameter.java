@@ -69,6 +69,10 @@ public class AppParameter {
                 ProgData.duration = true;
             }
 
+            if (hasOption(line, ProgParameter.SHOW_UPDATE)) {
+                ProgData.showUpdate = true;
+            }
+
             if (hasOption(line, ProgParameter.PATH)) {
                 String path = line.getOptionValue(ProgParameter.PATH.name);
                 setConfigDir(path);
@@ -118,6 +122,7 @@ public class AppParameter {
         VERSION("v", "version", false, "show version"),
         PATH("p", "path", true, "path of configuration file"),
         DEBUG("d", "debug", false, "show debug info"),
+        SHOW_UPDATE("s", "showUpdate", false, "always show new version"),
         DURATION("t", "time", false, "show timekeeping info");
 
         final String shortname;

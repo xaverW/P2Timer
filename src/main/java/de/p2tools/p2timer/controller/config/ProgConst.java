@@ -36,8 +36,8 @@ public class ProgConst {
 
     // Website
     public static final String URL_WEBSITE = "https://www.p2tools.de/";
-    public static final String URL_WEBSITE_DOWNLOAD = "https://www.p2tools.de/p2podder/download.html";
-    public static final String URL_WEBSITE_HELP = "https://www.p2tools.de/p2podder/manual/";
+    public static final String URL_WEBSITE_DOWNLOAD = "https://github.com/xaverW/P2Timer/releases";
+    public static final String URL_WEBSITE_HELP = "https://github.com/xaverW/P2Timer";
 
     // ProgrammUrls
     public static final int MIN_TABLE_HEIGHT = 200;

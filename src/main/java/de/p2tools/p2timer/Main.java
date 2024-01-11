@@ -25,7 +25,7 @@ import java.awt.*;
 public class Main {
 
     /*
-     * Aufruf: java -jar P2Podder [Pfad zur Konfig-Datei, sonst Home-Verzeichnis] [Schalter]
+     * Aufruf: java -jar P2Timer [Pfad zur Konfig-Datei, sonst Home-Verzeichnis] [Schalter]
      *
      * Programmschalter:
      * -d,  --debug         show debug info

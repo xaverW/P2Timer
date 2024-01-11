@@ -16,10 +16,10 @@
 
 package de.p2tools.p2timer.controller.config;
 
-import de.p2tools.p2timer.Main;
 import de.p2tools.p2lib.configfile.SettingsDirectory;
 import de.p2tools.p2lib.tools.PException;
 import de.p2tools.p2lib.tools.file.PFileUtils;
+import de.p2tools.p2timer.Main;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -91,9 +91,9 @@ public class ProgInfos {
     }
 
     /**
-     * Return the path to "p2podder.xml"
+     * Return the path to "p2timer.xml"
      *
-     * @return Path object to p2podder.xml file
+     * @return Path object to p2timer.xml file
      */
     public static Path getSettingsFile() {
         return SettingsDirectory.getSettingsFile(ProgData.configDir,
