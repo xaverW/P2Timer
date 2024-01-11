@@ -2,7 +2,7 @@
 
 # P2Timer
 
-P2Timer ist ein kleiner "Timer". Damit kann man sich regelmäßig erinnern lassen. Es wird eine Zeitspanne von z.B. 30 Minuten vorgegeben, dann "läutet" der Timer alle 30 Minuten und ich were z.B. daran erinnert, mich mal wieder zu bewegen. Weiterhin ist es auch möglich, eine Uhrzeit vorzugeben. Dann kann ich mich z.B. an den Tatort um 20:15 Uhr erinnern lassen. Desweiteren kann ich auch die Zeit messen, die ich z.B. auf dem Hometrainer radele.
+P2Timer ist ein kleiner "Timer". Damit kann man sich regelmäßig erinnern lassen. Es wird eine Zeitspanne von z.B. 30 Minuten vorgegeben, dann "läutet" der Timer alle 30 Minuten und ich werde z.B. daran erinnert, mich mal wieder zu bewegen. Weiterhin ist es auch möglich, eine Uhrzeit vorzugeben. Dann kann ich mich z.B. an den Tatort um 20:15 Uhr erinnern lassen. Desweiteren kann ich auch die Zeit messen, die ich z.B. auf dem Hometrainer radele.
 
 <br />
 
@@ -14,7 +14,7 @@ Wird die Programmoberfläche mit der Maus überfahren, werden die Einstellungen 
 
 ![Menü](instructions/P2Timer_2.png)
 
-Im Einstellungs-Dialog kann dann ausgeswählt werden, was der Timer machen soll: Aufwärts/abwärts zählen oder die Einstellung einer Uhrzeit.
+Im Einstellungs-Dialog kann dann ausgeswählt werden, was der Timer machen soll: Aufwärts/abwärts zählen oder die Einstellung einer Uhrzeit. Es kann auch ein Sound ausgeswählt werden, der dann beim Erreichen der Uhrzeit / Zeitspanne abgespielt wird.
 
 ![Einstellungen](instructions/P2Timer_3.png)
 
