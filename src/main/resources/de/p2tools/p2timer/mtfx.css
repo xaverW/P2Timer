@@ -1,0 +1,56 @@
+/*  Programmweites style sheet */
+
+
+.root {
+    -grad-1: linear-gradient(from 0% 0% to 100% 100%, #4e95ff, #2f5b99);
+    -grad-2: linear-gradient(from 0% 0% to 50% 50%, #334ca1, #18234c);
+    -grad-3: radial-gradient(focus-angle 45deg, focus-distance 20%, center 90% 75%, radius 30%, reflect, #478ce7, #3a72bf 75%, #3e77c8 75%);
+    -grad-4: radial-gradient(focus-angle 45deg, focus-distance 20%, center 90% 75%, radius 40%, reflect, #305d9c, #203e68 75%, #1e3c64 75%);
+}
+
+.timer-text {
+    -fx-font-size: 32px;
+    -fx-padding: 5 30 5 30;
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+}
+.timer-text-blink {
+    -fx-text-fill: #7f7f7f;
+}
+
+.smallGui{
+    /*ist der ganze Dialog*/
+    -fx-padding: 10 20 10 20;
+    -fx-background-insets: 0, 5, 8;
+    -fx-background-radius: 0, 20, 20;
+    -fx-background-color: #2166a3, #c20000, linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+
+.timer-button-box{
+    -fx-border-color: #2166a3;
+    -fx-border-radius: 20;
+    -fx-background-color: #2A5058;
+    -fx-background-radius: 20;
+    -fx-padding: 5 5 5 5;
+}
+.timer-button  {
+    -fx-min-width: 30;
+    -fx-min-height: 30;
+    -fx-max-width: 30;
+    -fx-max-height: 30;
+
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-border-color: #7e7e7e;
+
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+
+    -fx-padding: 2;
+}
+.timer-button:hover {
+    -fx-effect: innershadow(gaussian, #646464, 15, 0, 0, 0);
+}

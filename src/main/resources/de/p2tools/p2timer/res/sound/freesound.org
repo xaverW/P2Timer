@@ -1,0 +1,34 @@
+https://freesound.org/help/faq/#what-do-i-need-to-do-to-legally-use-the-files-on-freesound
+
+
+
+What do I need to do to legally use the files on freesound?
+
+Well, it depends on what you want to do and which files you want to use. First of all, freesound lets the user select one of three licenses for their sounds. And, we used to have a 4th license, which complicates matters. Depending on the license there are things you can and can't do with the files. Let's start with the licenses. Creative commons has a really nice page explaining them:
+
+    zero (cc0): http://creativecommons.org/publicdomain/zero/1.0/
+    attribution (by): http://creativecommons.org/licenses/by/4.0/
+    attribution noncommercial (by-nc): http://creativecommons.org/licenses/by-nc/4.0/
+
+We aren't lawyers so this isn't legal advice, but here's our summary: for the "zero" license you can do pretty much what you want with the sound. You could even sell the sound, ... but you can't claim you are the author!
+
+
+661589__josefpres__8-bit-arpeggio-001-minor-120-bpm-triangle-037-c4.wav
+662377__sascharettberg__twiddlyfx-a.wav
+664109__josefpres__8-bit-arpeggio-001-minor-120-bpm-pulse1-038-cis4.wav
+666620__saha213131__click.wav
+671003__josefpres__8-bit-arpeggio-001-minor-120-bpm-pulse2-037-c4.wav
+671969__darkadders__crunchy-mech-blip.wav
+680514__majinluu__synthwhite-noise-riser.wav
+680995__cloud-10__m1-classic-organ.wav
+682786__meklips__tom-1.wav
+686523__xupr_e3__mixkit-arcade-game-jump-coin-216.wav
+698518__monosfera__xdrop_007_stereo.wav
+709044__funnyvoices__suspensation-eu-fx.wav
+709052__funnyvoices__broomazizer-eu-fx.wav
+709054__funnyvoices__ufo-au-fx.wav
+709172__funnyvoices__ariawheez-au-fx.wav
+709176__funnyvoices__ufo-westall-au-fx.wav
+709213__funnyvoices__powerup-au-fx.wav
+713001__scottyd0es__clk-notification-06.wav
+713814__phantom20__dane-black.wav
