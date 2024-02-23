@@ -18,7 +18,7 @@ package de.p2tools.p2timer.controller.config;
 
 import de.p2tools.p2lib.configfile.SettingsDirectory;
 import de.p2tools.p2lib.tools.PException;
-import de.p2tools.p2lib.tools.file.PFileUtils;
+import de.p2tools.p2lib.tools.file.P2FileUtils;
 import de.p2tools.p2timer.Main;
 
 import java.io.File;
@@ -76,7 +76,7 @@ public class ProgInfos {
     }
 
     public static String getStandardPodDestString() {
-        return Paths.get(PFileUtils.getHomePath(), ProgConst.POD_DEST_DIR).toString();
+        return Paths.get(P2FileUtils.getHomePath(), ProgConst.POD_DEST_DIR).toString();
     }
 
     /**
