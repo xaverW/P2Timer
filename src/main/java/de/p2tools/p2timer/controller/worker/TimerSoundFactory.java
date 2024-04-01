@@ -17,7 +17,7 @@
 
 package de.p2tools.p2timer.controller.worker;
 
-import de.p2tools.p2lib.tools.log.PLog;
+import de.p2tools.p2lib.tools.log.P2Log;
 import de.p2tools.p2timer.controller.config.ProgConfig;
 
 import javax.sound.sampled.AudioInputStream;
@@ -49,7 +49,7 @@ public class TimerSoundFactory {
             clip.open(audioInputStream);
             clip.start();
         } catch (Exception e) {
-            PLog.errorLog(936541207, e);
+            P2Log.errorLog(936541207, e);
         }
     }
 

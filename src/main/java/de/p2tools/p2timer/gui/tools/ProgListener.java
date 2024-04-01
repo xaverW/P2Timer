@@ -16,7 +16,7 @@
 
 package de.p2tools.p2timer.gui.tools;
 
-import de.p2tools.p2lib.tools.log.PLog;
+import de.p2tools.p2lib.tools.log.P2Log;
 import javafx.application.Platform;
 
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public class ProgListener implements EventListener {
     }
 
     public static synchronized void addListener(ProgListener progListener) {
-        PLog.sysLog("Anz. Listener: " + PROG_LISTENERS.size());
+        P2Log.sysLog("Anz. Listener: " + PROG_LISTENERS.size());
         PROG_LISTENERS.add(progListener);
     }
 
@@ -83,7 +83,7 @@ public class ProgListener implements EventListener {
             ping();
             Platform.runLater(() -> pingFx());
         } catch (final Exception ex) {
-            PLog.errorLog(698989743, ex);
+            P2Log.errorLog(698989743, ex);
         }
     }
 }

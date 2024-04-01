@@ -17,7 +17,7 @@
 package de.p2tools.p2timer.gui.dialog;
 
 
-import de.p2tools.p2lib.dialogs.dialog.PDialogExtra;
+import de.p2tools.p2lib.dialogs.dialog.P2DialogExtra;
 import de.p2tools.p2lib.guitools.P2Button;
 import de.p2tools.p2timer.controller.config.ProgConfig;
 import de.p2tools.p2timer.controller.config.ProgData;
@@ -26,7 +26,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.paint.Color;
 
-public class ConfigDialogController extends PDialogExtra {
+public class ConfigDialogController extends P2DialogExtra {
 
     final ProgData progData;
     private Button btnOk = new Button("_Ok");

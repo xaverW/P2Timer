@@ -19,8 +19,8 @@ package de.p2tools.p2timer.controller;
 import de.p2tools.p2lib.guitools.P2WindowIcon;
 import de.p2tools.p2lib.tools.ProgramToolsFactory;
 import de.p2tools.p2lib.tools.duration.PDuration;
-import de.p2tools.p2lib.tools.log.LogMessage;
-import de.p2tools.p2lib.tools.log.PLog;
+import de.p2tools.p2lib.tools.log.P2LogMessage;
+import de.p2tools.p2lib.tools.log.P2Log;
 import de.p2tools.p2timer.controller.config.ProgConfig;
 import de.p2tools.p2timer.controller.config.ProgConst;
 import de.p2tools.p2timer.controller.config.ProgData;
@@ -57,10 +57,10 @@ public class ProgStartFactory {
         list.add("Verzeichnisse:");
         list.add("Programmpfad: " + ProgInfos.getPathJar());
         list.add("Verzeichnis Einstellungen: " + ProgInfos.getSettingsDirectoryString());
-        list.add(PLog.LILNE2);
+        list.add(P2Log.LILNE2);
         list.add("");
         ProgConfig.getConfigLog(list);
-        LogMessage.startMsg(ProgConst.PROGRAM_NAME, list);
+        P2LogMessage.startMsg(ProgConst.PROGRAM_NAME, list);
     }
 
     private static void setTitle(ProgData progData) {

@@ -18,7 +18,7 @@ package de.p2tools.p2timer.controller;
 
 import de.p2tools.p2lib.configfile.ConfigFile;
 import de.p2tools.p2lib.configfile.ConfigWriteFile;
-import de.p2tools.p2lib.tools.log.PLog;
+import de.p2tools.p2lib.tools.log.P2Log;
 import de.p2tools.p2timer.controller.config.ProgConfig;
 import de.p2tools.p2timer.controller.config.ProgInfos;
 
@@ -30,12 +30,12 @@ public class ProgSaveFactory {
     }
 
     public static void saveAll() {
-        PLog.sysLog("save all data");
+        P2Log.sysLog("save all data");
         saveProgConfig();
     }
 
     public static void saveProgConfig() {
-        PLog.sysLog("Alle Programmeinstellungen sichern");
+        P2Log.sysLog("Alle Programmeinstellungen sichern");
         final Path xmlFilePath = ProgInfos.getSettingsFile();
         ConfigFile configFile = new ConfigFile(xmlFilePath.toString(), true);
         ProgConfig.addConfigData(configFile);

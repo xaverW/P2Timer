@@ -16,7 +16,7 @@
 
 package de.p2tools.p2timer.controller;
 
-import de.p2tools.p2lib.tools.log.LogMessage;
+import de.p2tools.p2lib.tools.log.P2LogMessage;
 import javafx.application.Platform;
 
 public class ProgQuitFactory {
@@ -44,7 +44,7 @@ public class ProgQuitFactory {
     private static boolean quit_(boolean showOptionTerminate) {
         // und dann Programm beenden
         ProgSaveFactory.saveProgConfig();
-        LogMessage.endMsg();
+        P2LogMessage.endMsg();
         return true;
     }
 }

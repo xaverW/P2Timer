@@ -19,7 +19,7 @@ package de.p2tools.p2timer.controller;
 import de.p2tools.p2lib.configfile.ConfigFile;
 import de.p2tools.p2lib.configfile.ConfigReadFile;
 import de.p2tools.p2lib.tools.duration.PDuration;
-import de.p2tools.p2lib.tools.log.PLog;
+import de.p2tools.p2lib.tools.log.P2Log;
 import de.p2tools.p2timer.controller.config.ProgConfig;
 import de.p2tools.p2timer.controller.config.ProgData;
 import de.p2tools.p2timer.controller.config.ProgInfos;
@@ -36,12 +36,12 @@ public class ProgLoadFactory {
         PDuration.onlyPing("ProgStartFactory.loadProgConfigData");
         if (!loadProgConfig()) {
             //todo? teils geladene Reste entfernen
-            PLog.sysLog("-> konnte nicht geladen werden!");
+            P2Log.sysLog("-> konnte nicht geladen werden!");
             clearConfig();
             return false;
         } else {
             UpdateConfig.update(); // falls es ein Programmupdate gab, Configs anpassen
-            PLog.sysLog("-> wurde gelesen!");
+            P2Log.sysLog("-> wurde gelesen!");
             return true;
         }
     }
@@ -52,16 +52,16 @@ public class ProgLoadFactory {
 
     private static boolean loadProgConfig() {
         final Path path = ProgInfos.getSettingsFile();
-        PLog.sysLog("Programmstart und ProgConfig laden von: " + path);
+        P2Log.sysLog("Programmstart und ProgConfig laden von: " + path);
         ConfigFile configFile = new ConfigFile(path.toString(), true);
         ProgConfig.addConfigData(configFile);
         if (ConfigReadFile.readConfig(configFile)) {
-            PLog.sysLog("Konfig wurde geladen!");
+            P2Log.sysLog("Konfig wurde geladen!");
             return true;
 
         } else {
             // dann hat das Laden nicht geklappt
-            PLog.sysLog("Konfig konnte nicht geladen werden!");
+            P2Log.sysLog("Konfig konnte nicht geladen werden!");
             return false;
         }
     }
