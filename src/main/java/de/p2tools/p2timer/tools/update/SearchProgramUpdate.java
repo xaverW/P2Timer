@@ -18,7 +18,7 @@ package de.p2tools.p2timer.tools.update;
 
 import de.p2tools.p2lib.checkforactinfos.FoundAll;
 import de.p2tools.p2lib.checkforactinfos.FoundSearchData;
-import de.p2tools.p2lib.tools.ProgramToolsFactory;
+import de.p2tools.p2lib.tools.P2ToolsFactory;
 import de.p2tools.p2lib.tools.date.P2Date;
 import de.p2tools.p2timer.controller.config.ProgConfig;
 import de.p2tools.p2timer.controller.config.ProgConst;
@@ -108,8 +108,8 @@ public class SearchProgramUpdate {
                     ProgConst.URL_WEBSITE,
                     ProgConst.URL_WEBSITE_DOWNLOAD,
                     ProgConst.PROGRAM_NAME,
-                    ProgramToolsFactory.getProgVersion(),
-                    ProgramToolsFactory.getBuild(),
+                    P2ToolsFactory.getProgVersion(),
+                    P2ToolsFactory.getBuild(),
                     buildDate,
                     ProgConfig.SYSTEM_DOWNLOAD_DIR_NEW_VERSION,
                     showAllways

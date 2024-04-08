@@ -16,10 +16,10 @@
 package de.p2tools.p2timer;
 
 import de.p2tools.p2lib.P2LibInit;
-import de.p2tools.p2lib.ProgIconsP2Lib;
+import de.p2tools.p2lib.P2ProgIcons;
 import de.p2tools.p2lib.guitools.P2GuiSize;
 import de.p2tools.p2lib.tools.IoReadWriteStyle;
-import de.p2tools.p2lib.tools.duration.PDuration;
+import de.p2tools.p2lib.tools.duration.P2Duration;
 import de.p2tools.p2timer.controller.ProgQuitFactory;
 import de.p2tools.p2timer.controller.ProgStartFactory;
 import de.p2tools.p2timer.controller.config.ProgConfig;
@@ -51,7 +51,7 @@ public class P2Timer extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        PDuration.counterStart(LOG_TEXT_PROGRAM_START);
+        P2Duration.counterStart(LOG_TEXT_PROGRAM_START);
         progData = ProgData.getInstance();
         progData.primaryStage = primaryStage;
 
@@ -60,13 +60,13 @@ public class P2Timer extends Application {
         initRootLayout();
         ProgStartFactory.workAfterGui(progData);
 
-        PDuration.onlyPing("Gui steht!");
-        PDuration.counterStop(LOG_TEXT_PROGRAM_START);
+        P2Duration.onlyPing("Gui steht!");
+        P2Duration.counterStop(LOG_TEXT_PROGRAM_START);
     }
 
     private void initLibs() {
         ProgIcons.initIcons();
-        ProgIconsP2Lib.initIcons();
+        P2ProgIcons.initIcons();
         P2LibInit.initLib(primaryStage, ProgConst.PROGRAM_NAME,
                 "", ProgConfig.SYSTEM_DARK_THEME, ProgData.debug, ProgData.duration);
         P2LibInit.addCssFile(ProgConst.CSS_FILE);

@@ -17,7 +17,7 @@
 
 package de.p2tools.p2timer.controller.config;
 
-import de.p2tools.p2lib.tools.duration.PDuration;
+import de.p2tools.p2lib.tools.duration.P2Duration;
 import de.p2tools.p2timer.P2TimerController;
 import de.p2tools.p2timer.controller.data.P2TimerShortCuts;
 import de.p2tools.p2timer.controller.worker.Worker;
@@ -83,7 +83,7 @@ public class ProgData {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.setDelay(Duration.seconds(5));
         timeline.play();
-        PDuration.onlyPing("Timer gestartet");
+        P2Duration.onlyPing("Timer gestartet");
     }
 
     private void doTimerWorkOneSecond() {

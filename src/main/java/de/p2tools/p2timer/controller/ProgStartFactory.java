@@ -17,8 +17,8 @@
 package de.p2tools.p2timer.controller;
 
 import de.p2tools.p2lib.guitools.P2WindowIcon;
-import de.p2tools.p2lib.tools.ProgramToolsFactory;
-import de.p2tools.p2lib.tools.duration.PDuration;
+import de.p2tools.p2lib.tools.P2ToolsFactory;
+import de.p2tools.p2lib.tools.duration.P2Duration;
 import de.p2tools.p2lib.tools.log.P2LogMessage;
 import de.p2tools.p2lib.tools.log.P2Log;
 import de.p2tools.p2timer.controller.config.ProgConfig;
@@ -36,7 +36,7 @@ public class ProgStartFactory {
     public static void workBeforeGui() {
         boolean loadOk = ProgLoadFactory.loadProgConfigData();
         if (!loadOk) {
-            PDuration.onlyPing("Erster Start");
+            P2Duration.onlyPing("Erster Start");
         }
     }
 
@@ -65,9 +65,9 @@ public class ProgStartFactory {
 
     private static void setTitle(ProgData progData) {
         if (ProgData.debug) {
-            progData.primaryStage.setTitle(ProgConst.PROGRAM_NAME + " " + ProgramToolsFactory.getProgVersion() + " / DEBUG");
+            progData.primaryStage.setTitle(ProgConst.PROGRAM_NAME + " " + P2ToolsFactory.getProgVersion() + " / DEBUG");
         } else {
-            progData.primaryStage.setTitle(ProgConst.PROGRAM_NAME + " " + ProgramToolsFactory.getProgVersion());
+            progData.primaryStage.setTitle(ProgConst.PROGRAM_NAME + " " + P2ToolsFactory.getProgVersion());
         }
     }
 }

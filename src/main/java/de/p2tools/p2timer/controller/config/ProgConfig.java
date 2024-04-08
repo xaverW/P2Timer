@@ -19,8 +19,8 @@ package de.p2tools.p2timer.controller.config;
 
 import de.p2tools.p2lib.configfile.ConfigFile;
 import de.p2tools.p2lib.configfile.config.Config;
-import de.p2tools.p2lib.data.PDataProgConfig;
-import de.p2tools.p2lib.tools.ProgramToolsFactory;
+import de.p2tools.p2lib.data.P2DataProgConfig;
+import de.p2tools.p2lib.tools.P2ToolsFactory;
 import de.p2tools.p2lib.tools.log.P2Log;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
@@ -28,7 +28,7 @@ import javafx.beans.property.StringProperty;
 
 import java.util.ArrayList;
 
-public class ProgConfig extends PDataProgConfig {
+public class ProgConfig extends P2DataProgConfig {
 
     //Shorcuts
     public static final String SHORTCUT_QUIT_PROGRAM_INIT = "Ctrl+Q";
@@ -81,9 +81,9 @@ public class ProgConfig extends PDataProgConfig {
     }
 
     public static void addConfigData(ConfigFile configFile) {
-        ProgConfig.SYSTEM_PROG_VERSION.set(ProgramToolsFactory.getProgVersion());
-        ProgConfig.SYSTEM_PROG_BUILD_NO.set(ProgramToolsFactory.getBuild());
-        ProgConfig.SYSTEM_PROG_BUILD_DATE.set(ProgramToolsFactory.getCompileDate());
+        ProgConfig.SYSTEM_PROG_VERSION.set(P2ToolsFactory.getProgVersion());
+        ProgConfig.SYSTEM_PROG_BUILD_NO.set(P2ToolsFactory.getBuild());
+        ProgConfig.SYSTEM_PROG_BUILD_DATE.set(P2ToolsFactory.getCompileDate());
 
         configFile.addConfigs(ProgConfig.getInstance());
     }

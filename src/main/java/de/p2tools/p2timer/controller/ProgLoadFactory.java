@@ -18,7 +18,7 @@ package de.p2tools.p2timer.controller;
 
 import de.p2tools.p2lib.configfile.ConfigFile;
 import de.p2tools.p2lib.configfile.ConfigReadFile;
-import de.p2tools.p2lib.tools.duration.PDuration;
+import de.p2tools.p2lib.tools.duration.P2Duration;
 import de.p2tools.p2lib.tools.log.P2Log;
 import de.p2tools.p2timer.controller.config.ProgConfig;
 import de.p2tools.p2timer.controller.config.ProgData;
@@ -33,7 +33,7 @@ public class ProgLoadFactory {
     }
 
     public static boolean loadProgConfigData() {
-        PDuration.onlyPing("ProgStartFactory.loadProgConfigData");
+        P2Duration.onlyPing("ProgStartFactory.loadProgConfigData");
         if (!loadProgConfig()) {
             //todo? teils geladene Reste entfernen
             P2Log.sysLog("-> konnte nicht geladen werden!");
