@@ -17,39 +17,85 @@
 
 package de.p2tools.p2timer.controller.worker;
 
+
 import de.p2tools.p2lib.tools.log.P2Log;
 import de.p2tools.p2timer.controller.config.ProgConfig;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import java.net.URL;
+import java.nio.file.Path;
 
 public class TimerSoundFactory {
-    private static Clip clip = null;
+    public static final ObjectProperty<Process> processProp = new SimpleObjectProperty<>(null);
+    public static final ObjectProperty<MediaPlayer> mediaPlayerProp = new SimpleObjectProperty<>(null);
 
     private TimerSoundFactory() {
     }
 
+    public static void stopSound() {
+        if (processProp.get() != null) {
+            processProp.get().destroy();
+            processProp.setValue(null);
+        }
+        if (mediaPlayerProp.get() != null) {
+            mediaPlayerProp.get().stop();
+            mediaPlayerProp.setValue(null);
+        }
+    }
+
     public static void playSound() {
         if (!ProgConfig.SYSTEM_PLAY_SOUND.getValue()) {
-            //dann will ers nicht
+            // dann will ers nicht
             return;
         }
 
         try {
-            if (clip != null && clip.isRunning()) {
-                clip.stop();
-            }
+            String sound;
+            URL url;
 
-            String resource = SOUND.getSound(ProgConfig.SYSTEM_TIMER_SOUND.getValue()).getPath();
-            URL res = ClassLoader.getSystemResource(resource);
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(res);
-            clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
-        } catch (Exception e) {
-            P2Log.errorLog(936541207, e);
+            if (ProgConfig.SYSTEM_PLAY_OWN_PLAYER.getValue() &&
+                    ProgConfig.SYSTEM_PLAY_OWN_SOUND.getValue() &&
+                    !ProgConfig.SYSTEM_OWN_PLAYER_FILE.getValueSafe().isEmpty() &&
+                    !ProgConfig.SYSTEM_OWN_SOUND_FILE.getValueSafe().isEmpty()) {
+
+                // dann eigenen Player und eigenen Sound
+                sound = ProgConfig.SYSTEM_OWN_SOUND_FILE.getValueSafe();
+                String call = ProgConfig.SYSTEM_OWN_PLAYER_FILE.getValueSafe();
+                String parameter = ProgConfig.SYSTEM_OWN_PLAYER_PARAMETER.getValueSafe();
+                parameter = parameter.replace("%f", sound);
+                call = call + "<>" + parameter;
+                RuntimeExecPlay runtimeExecPlay = new RuntimeExecPlay(call);
+                processProp.setValue(runtimeExecPlay.exec(true));
+
+            } else if (ProgConfig.SYSTEM_PLAY_OWN_SOUND.getValue() &&
+                    !ProgConfig.SYSTEM_OWN_SOUND_FILE.getValueSafe().isEmpty()) {
+
+                // dann eigenen Sound mit Player
+                sound = ProgConfig.SYSTEM_OWN_SOUND_FILE.getValueSafe();
+                url = Path.of(sound).toUri().toURL();
+
+                Media media = new Media(url.toString());
+                MediaPlayer player = new MediaPlayer(media);
+                mediaPlayerProp.setValue(player);
+                player.play();
+                player.setOnEndOfMedia(() -> mediaPlayerProp.setValue(null));
+
+            } else {
+                // dann Sound mit Player
+                sound = SOUND.getSound(ProgConfig.SYSTEM_TIMER_SOUND.getValue()).getPath();
+                url = ClassLoader.getSystemResource(sound);
+
+                Media media = new Media(url.toString());
+                MediaPlayer player = new MediaPlayer(media);
+                mediaPlayerProp.setValue(player);
+                player.play();
+                player.setOnEndOfMedia(() -> mediaPlayerProp.setValue(null));
+            }
+        } catch (Exception ex) {
+            P2Log.errorLog(604598712, ex);
         }
     }
 

@@ -43,6 +43,7 @@ public class ProgIcons {
     public static P2IconP2Timer ICON_BUTTON_PROPOSE = new P2IconP2Timer(ICON_PATH_LONG, ICON_PATH, "button-propose.png", 16, 16);
     public static P2IconP2Timer ICON_BUTTON_QUIT = new P2IconP2Timer(ICON_PATH_LONG, ICON_PATH, "button-quit.png", 16, 16);
     public static P2IconP2Timer ICON_BUTTON_FILE_OPEN = new P2IconP2Timer(ICON_PATH_LONG, ICON_PATH, "button-file-open.png", 16, 16);
+    public static P2IconP2Timer ICON_BUTTON_RESET_VLC = new P2IconP2Timer(ICON_PATH_LONG, ICON_PATH, "button-reset-vlc.png", 16, 16);
     public static P2IconP2Timer ICON_BUTTON_NEXT = new P2IconP2Timer(ICON_PATH_LONG, ICON_PATH, "button-next.png", 16, 16);
     public static P2IconP2Timer ICON_BUTTON_PREV = new P2IconP2Timer(ICON_PATH_LONG, ICON_PATH, "button-prev.png", 16, 16);
     public static P2IconP2Timer ICON_BUTTON_FORWARD = new P2IconP2Timer(ICON_PATH_LONG, ICON_PATH, "button-forward.png", 16, 16);

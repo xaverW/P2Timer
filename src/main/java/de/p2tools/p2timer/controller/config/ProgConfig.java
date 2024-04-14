@@ -22,6 +22,7 @@ import de.p2tools.p2lib.configfile.config.Config;
 import de.p2tools.p2lib.data.P2DataProgConfig;
 import de.p2tools.p2lib.tools.P2ToolsFactory;
 import de.p2tools.p2lib.tools.log.P2Log;
+import de.p2tools.p2timer.controller.worker.TimerFactory;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
@@ -57,7 +58,12 @@ public class ProgConfig extends P2DataProgConfig {
     public static IntegerProperty SYSTEM_COUNT_TIMER_MAX_VALUE_MINUTES = addIntProp("system-timer-max-value-minutes", 30);//aktueller Timer MAX-Wert (Min.)
 
     public static BooleanProperty SYSTEM_PLAY_SOUND = addBoolProp("system-play-sound", Boolean.TRUE);
-    public static StringProperty SYSTEM_USERAGENT = addStrProp("system-useragent", ProgConst.USER_AGENT_DEFAULT);    // Useragent für direkte Downloads
+    public static BooleanProperty SYSTEM_PLAY_OWN_SOUND = addBoolProp("system-play-own-sound", Boolean.FALSE);
+    public static BooleanProperty SYSTEM_PLAY_OWN_PLAYER = addBoolProp("system-play-own-player", Boolean.FALSE);
+    public static StringProperty SYSTEM_OWN_SOUND_FILE = addStrProp("system-own-sound-file");
+    public static StringProperty SYSTEM_OWN_PLAYER_FILE = addStrProp("system-own-player-file", TimerFactory.getTemplatePathVlc());
+    public static StringProperty SYSTEM_OWN_PLAYER_PARAMETER = addStrProp("system-own-player-parameter", "%f<>--play-and-exit<>-I<>dummy");
+    public static StringProperty SYSTEM_USERAGENT = addStrProp("system-useragent", ProgConst.USER_AGENT_DEFAULT); // Useragent für direkte Downloads
     public static StringProperty SYSTEM_PROG_OPEN_URL = addStrProp("system-prog-open-url");
     public static BooleanProperty SYSTEM_STYLE = addBoolProp("system-style", Boolean.FALSE);
     public static StringProperty SYSTEM_LOG_DIR = addStrProp("system-log-dir", "");

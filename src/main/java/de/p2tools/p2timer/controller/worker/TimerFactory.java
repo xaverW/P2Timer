@@ -17,14 +17,18 @@
 
 package de.p2tools.p2timer.controller.worker;
 
+import de.p2tools.p2lib.tools.P2ToolsFactory;
 import de.p2tools.p2timer.controller.config.ProgConfig;
 
+import java.io.File;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class TimerFactory {
     public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+    private static final ArrayList<String> winPath = new ArrayList<>();
 
 
     private TimerFactory() {
@@ -59,4 +63,63 @@ public class TimerFactory {
             return (h == 0 ? "" : hour + ":") + min + (setSeconds ? ":" + sec : "");
         }
     }
+
+    public static String getTemplatePathVlc() {
+        // liefert den Standardpfad für das entsprechende BS
+        // Programm muss auf dem Rechner instelliert sein
+        final String PATH_LINUX_VLC = "/usr/bin/vlc";
+        final String PATH_FREEBSD = "/usr/local/bin/vlc";
+        final String PATH_WIN = "\\VideoLAN\\VLC\\vlc.exe";
+        String path = "";
+        try {
+            switch (P2ToolsFactory.getOs()) {
+                case LINUX:
+                    if (System.getProperty("os.name").toLowerCase().contains("freebsd")) {
+                        path = PATH_FREEBSD;
+                    } else {
+                        path = PATH_LINUX_VLC;
+                    }
+                    break;
+                default:
+                    setWinProgPath();
+                    for (final String s : winPath) {
+                        path = s + PATH_WIN;
+                        if (new File(path).exists()) {
+                            break;
+                        }
+                    }
+            }
+            if (!new File(path).exists() && System.getenv("PATH_VLC") != null) {
+                path = System.getenv("PATH_VLC");
+            }
+            if (!new File(path).exists()) {
+                path = "";
+            }
+        } catch (final Exception ignore) {
+        }
+        return path;
+    }
+
+    private static void setWinProgPath() {
+        String pfad;
+        if (System.getenv("ProgramFiles") != null) {
+            pfad = System.getenv("ProgramFiles");
+            if (new File(pfad).exists() && !winPath.contains(pfad)) {
+                winPath.add(pfad);
+            }
+        }
+        if (System.getenv("ProgramFiles(x86)") != null) {
+            pfad = System.getenv("ProgramFiles(x86)");
+            if (new File(pfad).exists() && !winPath.contains(pfad)) {
+                winPath.add(pfad);
+            }
+        }
+        final String[] PATH = {"C:\\Program Files", "C:\\Programme", "C:\\Program Files (x86)"};
+        for (final String s : PATH) {
+            if (new File(s).exists() && !winPath.contains(s)) {
+                winPath.add(s);
+            }
+        }
+    }
 }
+

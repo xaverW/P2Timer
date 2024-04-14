@@ -83,7 +83,7 @@ public class ConfigDialogController extends P2DialogExtra {
         getHboxLeft().getChildren().addAll(btnUeber, btnHelp);
 
         paneTimer = new PaneTimer();
-        paneSound = new PaneSound();
+        paneSound = new PaneSound(getStage());
 
         Tab tabTimer = new Tab("Timer");
         tabTimer.setClosable(false);
