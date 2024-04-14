@@ -25,10 +25,21 @@ Das Programm nutzt den Ordner ".p2Timer" unter Linux und den versteckten Ordner 
 Konfig-Ordner. Man kann dem Programm auch einen Ordner für die Einstellungen mitgeben (und es z.B. auf einem USB-Stick
 verwenden):
 
+<br />
+
+Hier wird ein Ordner relativ zur Programmdatei verwendet:
 ```
 java -jar P2Timer.jar ORDNER
 ```
 <br />
+
+Hier wird ein absoluter Pfad verwendet:
+```
+java -jar P2Timer.jar /tmp/ORDNER
+java -jar P2Timer.jar c:\ORDNER
+```
+<br />
+
 
 ## Systemvoraussetzungen
 
