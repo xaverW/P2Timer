@@ -126,7 +126,7 @@ public class PaneSound extends VBox {
     private void addOwnPlayer() {
         final Button btnHelp = P2Button.helpButton(stage, "Player Einstellungen",
                 "Hier kann ein eigener Player eingerichtet werden. Die Vorgabe ist der VLC-Player " +
-                        "Mit dem Button darunter (Zwei Pfeile) wird die Vorgabe wieder " +
+                        "Mit dem Button darunter (zwei Pfeile) wird die Vorgabe wieder " +
                         "hergestellt." +
                         "\n\n" +
                         "Programmdatei: Hier steht der Pfad zum Programm.\n" +
